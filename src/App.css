@@ -1,0 +1,9 @@
+.app-check {
+  width: 20px;
+  height: 20px;
+  margin: 1%;
+}
+
+.errmsg {
+  color: red;
+}
