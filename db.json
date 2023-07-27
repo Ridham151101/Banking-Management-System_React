@@ -7,7 +7,54 @@
       "phone": "6355660448",
       "address": "A-49, Pramukhchhaya Society,\nPunagam, Yogichowk\nNear Silver Chowk",
       "gender": "male",
+      "birthdate": "2001-11-15",
+      "role": "admin",
       "id": 1
+    },
+    {
+      "name": "Deep Shah",
+      "email": "deep.shah@bacancy.com",
+      "password": "123456",
+      "phone": "5236542187",
+      "address": "Bharuch, Gujarat",
+      "gender": "male",
+      "birthdate": "2001-03-29",
+      "role": "customer",
+      "id": 2
+    },
+    {
+      "name": "Krupa Khant",
+      "email": "krupa.khant@bacancy.com",
+      "password": "123456",
+      "phone": "8965856745",
+      "address": "Valsad, Gujarat",
+      "gender": "female",
+      "birthdate": "2002-05-29",
+      "role": "customer",
+      "id": 3
+    },
+    {
+      "name": "Heet Sabhaya",
+      "email": "heet.sabhaya@bacancy.com",
+      "password": "123456",
+      "phone": "8569854756",
+      "address": "Rajkot, Gujarat",
+      "gender": "male",
+      "birthdate": "2001-11-22",
+      "role": "employee",
+      "id": 4
+    }
+  ],
+  "accountRequests": [
+    {
+      "id": 1,
+      "userId": 2,
+      "status": "approved"
+    },
+    {
+      "userId": 3,
+      "status": "pending",
+      "id": 2
     }
   ]
 }

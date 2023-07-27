@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import AccountRequestForm from "../components/AccountRequestForm";
+import CreateUserForm from "../components/CreateUserForm";
 import axios from "axios";
 
 const initialState = {
@@ -11,6 +11,8 @@ const initialState = {
   phone: "",
   address: "",
   gender: "male",
+  birthdate: "",
+  role: "customer",
 };
 
 const reducer = (state, action) => {
@@ -55,12 +57,25 @@ const AccountRequest = () => {
     if (isValidate()) {
       axios
         .post("http://localhost:8000/users", state)
-        .then((res) => {
-          toast.success("Registered Successfully.");
-          navigate("/login");
+        .then((userRes) => {
+          // Create the account request associated with the newly created user
+          const accountRequestObj = {
+            userId: userRes.data.id,
+            status: "pending",
+          };
+
+          axios
+            .post("http://localhost:8000/accountRequests", accountRequestObj)
+            .then(() => {
+              toast.success("Account request submitted successfully.");
+              navigate("/login");
+            })
+            .catch((err) => {
+              toast.error("Failed to create account request:", err.message);
+            });
         })
         .catch((err) => {
-          toast.error("Failed:", err.message);
+          toast.error("Failed to create user:", err.message);
         });
     }
   };
@@ -70,7 +85,7 @@ const AccountRequest = () => {
   };
   return (
     <div className="offset-lg-3 col-lg-6">
-      <AccountRequestForm
+      <CreateUserForm
         state={state}
         handleFieldChange={handleFieldChange}
         handleSubmit={handleSubmit}

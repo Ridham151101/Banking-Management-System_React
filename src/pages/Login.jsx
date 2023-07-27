@@ -10,9 +10,32 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    sessionStorage.clear();
-  }, []);
+  const handleCustomerLogin = (user) => {
+    axios
+      .get(`http://localhost:8000/accountRequests?userId=${user.id}`)
+      .then((res) => {
+        const accountRequests = res.data;
+        if (
+          accountRequests.length === 0 ||
+          accountRequests[0].status === "pending"
+        ) {
+          toast.warning(
+            "Your account request is pending. Please wait for approval."
+          );
+        } else {
+          if (user.password === password) {
+            toast.success("Successfully Logged in");
+            sessionStorage.setItem("email", user.email);
+            navigate("/home");
+          } else {
+            toast.error("Please enter valid credentials");
+          }
+        }
+      })
+      .catch((err) => {
+        toast.error("Login Failed due to: " + err.message);
+      });
+  };
 
   const ProceedLogin = (e) => {
     e.preventDefault();
@@ -26,12 +49,18 @@ const Login = () => {
           if (!user) {
             toast.error("Please enter a valid Email");
           } else {
-            if (user.password === password) {
-              toast.success("Successfully Logged in");
-              sessionStorage.setItem("email", user.email);
-              navigate("/");
+            if (user.role === "customer") {
+              handleCustomerLogin(user);
             } else {
-              toast.error("Please enter valid credentials");
+              // Proceed with login for admins and other roles
+              if (user.password === password) {
+                toast.success("Successfully Logged in");
+                sessionStorage.setItem("email", user.email);
+                sessionStorage.setItem("role", user.role);
+                navigate("/home");
+              } else {
+                toast.error("Please enter valid credentials");
+              }
             }
           }
         })

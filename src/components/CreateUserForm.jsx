@@ -2,9 +2,16 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import FormInput from "./FormInput";
 import FormTextArea from "./FormTextArea";
+import { Link } from "react-router-dom";
 
-const AccountRequestForm = ({ state, handleFieldChange, handleSubmit }) => {
-  const { name, email, password, phone, address, gender } = state;
+const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
+  const { name, email, password, phone, address, gender, birthdate } = state;
+
+  let formHeading = "Add Employee";
+
+  if (state.role === "customer") {
+    formHeading = "Account Request";
+  }
 
   return (
     <>
@@ -15,7 +22,7 @@ const AccountRequestForm = ({ state, handleFieldChange, handleSubmit }) => {
       >
         <div className="card">
           <div className="card-header">
-            <h1>Account Request</h1>
+            <h1>{formHeading}</h1>
           </div>
           <div className="card-body">
             <div className="row">
@@ -31,6 +38,14 @@ const AccountRequestForm = ({ state, handleFieldChange, handleSubmit }) => {
                   label="Email"
                   value={email}
                   onChange={(value) => handleFieldChange("email", value)}
+                />
+              </div>
+              <div className="col-lg-6">
+                <FormInput
+                  type="date"
+                  label="Birthdate"
+                  value={birthdate}
+                  onChange={(value) => handleFieldChange("birthdate", value)}
                 />
               </div>
               <div className="col-lg-6">
@@ -69,7 +84,9 @@ const AccountRequestForm = ({ state, handleFieldChange, handleSubmit }) => {
             <Button type="submit" style={{ marginRight: "10px" }}>
               Register
             </Button>
-            <Button variant="danger">Back</Button>
+            <Link to="/">
+              <Button variant="danger">Back</Button>
+            </Link>
           </div>
         </div>
       </form>
@@ -77,4 +94,4 @@ const AccountRequestForm = ({ state, handleFieldChange, handleSubmit }) => {
   );
 };
 
-export default AccountRequestForm;
+export default CreateUserForm;
