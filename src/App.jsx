@@ -9,21 +9,30 @@ import LandingPage from "./pages/LandingPage";
 import AddEmployee from "./pages/AddEmployee";
 import NotFound from "./pages/NotFound";
 import Navigationbar from "./components/Navigationbar";
+import Employees from "./pages/Employees";
+import UserProfile from "./pages/UserProfile";
+import { AppContextProvider } from "./utils/AppContext";
+import EditProfile from "./pages/EditProfile";
 
 const App = () => {
   return (
     <>
       <ToastContainer theme="colored"></ToastContainer>
       <BrowserRouter>
-        <Navigationbar />
-        <Routes>
-          <Route exact path="/" element={<LandingPage />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/account-request" element={<AccountRequest />}></Route>
-          <Route path="/add-employee" element={<AddEmployee />}></Route>
-          <Route path="*" Component={NotFound} />
-        </Routes>
+        <AppContextProvider>
+          <Navigationbar />
+          <Routes>
+            <Route exact path="/" element={<LandingPage />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/account-request" element={<AccountRequest />}></Route>
+            <Route path="/home" element={<Home />}></Route>
+            <Route path="/profile" element={<UserProfile />}></Route>
+            <Route path="/edit-profile" element={<EditProfile />}></Route>
+            <Route path="/add-employee" element={<AddEmployee />}></Route>
+            <Route path="/employees" element={<Employees />}></Route>
+            <Route path="*" Component={NotFound} />
+          </Routes>
+        </AppContextProvider>
       </BrowserRouter>
     </>
   );

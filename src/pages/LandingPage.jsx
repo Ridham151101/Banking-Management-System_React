@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import bankingImage from "../assets/banking.jpg";
 
 const LandingPage = () => {
-  useEffect(() => {
-    sessionStorage.clear();
-  }, []);
+  // useEffect(() => {
+  //   sessionStorage.clear();
+  // }, []);
 
   return (
     <Container fluid>

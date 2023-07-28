@@ -8,9 +8,13 @@ const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
   const { name, email, password, phone, address, gender, birthdate } = state;
 
   let formHeading = "Add Employee";
+  let backButtonLink = "/";
 
   if (state.role === "customer") {
     formHeading = "Account Request";
+    backButtonLink = "/";
+  } else {
+    backButtonLink = "/employees";
   }
 
   return (
@@ -84,7 +88,7 @@ const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
             <Button type="submit" style={{ marginRight: "10px" }}>
               Register
             </Button>
-            <Link to="/">
+            <Link to={backButtonLink}>
               <Button variant="danger">Back</Button>
             </Link>
           </div>

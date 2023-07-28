@@ -48,15 +48,15 @@ const Navigationbar = () => {
                 <Link to="/home" className="navbar-link">
                   Home
                 </Link>
-                <Link to="/transactions" className="navbar-link">
-                  Transactions
+                <Link to="/profile" className="navbar-link">
+                  Profile
                 </Link>
 
                 {/* Buttons for admin and employee */}
                 {role === "admin" || role === "employee" ? (
                   <>
                     <Link to="/employees" className="navbar-link">
-                      Employee
+                      Employees
                     </Link>
                     <Link to="/customers" className="navbar-link">
                       Customers
@@ -64,16 +64,15 @@ const Navigationbar = () => {
                   </>
                 ) : null}
 
+                <Link to="/transactions" className="navbar-link">
+                  Transactions
+                </Link>
+
                 {/* Buttons for customer */}
                 {role === "customer" && (
-                  <>
-                    <Link to="/transaction-history" className="navbar-link">
-                      Transaction History
-                    </Link>
-                    <Link to="/profile" className="navbar-link">
-                      Show Profile
-                    </Link>
-                  </>
+                  <Link to="/transaction-history" className="navbar-link">
+                    Transaction History
+                  </Link>
                 )}
               </>
             )}
