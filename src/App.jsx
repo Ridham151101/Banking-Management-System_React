@@ -13,6 +13,7 @@ import Employees from "./pages/Employees";
 import UserProfile from "./pages/UserProfile";
 import { AppContextProvider } from "./utils/AppContext";
 import EditProfile from "./pages/EditProfile";
+import Customers from "./pages/Customers";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/edit-profile" element={<EditProfile />}></Route>
             <Route path="/add-employee" element={<AddEmployee />}></Route>
             <Route path="/employees" element={<Employees />}></Route>
+            <Route path="/customers" element={<Customers />}></Route>
             <Route path="*" Component={NotFound} />
           </Routes>
         </AppContextProvider>

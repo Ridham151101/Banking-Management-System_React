@@ -15,7 +15,7 @@
       "name": "Deep Shah",
       "email": "deep.shah@bacancy.com",
       "password": "123456",
-      "phone": "5236542187",
+      "phone": "5236542542",
       "address": "Bharuch, Gujarat",
       "gender": "male",
       "birthdate": "2001-03-29",
@@ -53,8 +53,17 @@
     },
     {
       "userId": 3,
-      "status": "pending",
+      "status": "approved",
       "id": 2
+    }
+  ],
+  "accounts": [
+    {
+      "accountType": "current",
+      "balance": "1000",
+      "customerId": 3,
+      "accountNumber": "15890492319073",
+      "id": 1
     }
   ]
 }
