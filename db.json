@@ -60,14 +60,14 @@
   "accounts": [
     {
       "accountType": "current",
-      "balance": "1000",
+      "balance": 1000.0,
       "customerId": 3,
       "accountNumber": "15890492319073",
       "id": 1
     },
     {
       "accountType": "savings",
-      "balance": "1000",
+      "balance": 1000.2,
       "customerId": 5,
       "accountNumber": "47590447541530",
       "id": 2

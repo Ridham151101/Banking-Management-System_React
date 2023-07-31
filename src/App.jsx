@@ -16,6 +16,7 @@ import EditProfile from "./pages/EditProfile";
 import Customers from "./pages/Customers";
 import Private from "./utils/PrivateRoute";
 import Public from "./utils/PublicRoute";
+import CustomerAccountDetails from "./pages/CustomerAccountDetails";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -96,6 +97,14 @@ const App = () => {
               element={
                 <Private isLoggedIn={isLoggedIn}>
                   <Customers />
+                </Private>
+              }
+            />
+            <Route
+              path="/account-details/:customerId"
+              element={
+                <Private isLoggedIn={isLoggedIn}>
+                  <CustomerAccountDetails />
                 </Private>
               }
             />

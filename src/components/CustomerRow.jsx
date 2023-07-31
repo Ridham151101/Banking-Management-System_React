@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CustomerRow = ({ customer, handleCreateAccount }) => {
   return (
     <tr key={customer.id}>
@@ -13,6 +15,15 @@ const CustomerRow = ({ customer, handleCreateAccount }) => {
           >
             Approve
           </button>
+        )}
+
+        {customer.accountRequestStatus === "approved" && (
+          <Link
+            to={`/account-details/${customer.id}`}
+            className="btn btn-primary"
+          >
+            View Account Details
+          </Link>
         )}
       </td>
     </tr>
