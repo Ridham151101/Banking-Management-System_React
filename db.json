@@ -12,17 +12,6 @@
       "id": 1
     },
     {
-      "name": "Deep Shah",
-      "email": "deep.shah@bacancy.com",
-      "password": "123456",
-      "phone": "5236542542",
-      "address": "Bharuch, Gujarat",
-      "gender": "male",
-      "birthdate": "2001-03-29",
-      "role": "customer",
-      "id": 2
-    },
-    {
       "name": "Krupa Khant",
       "email": "krupa.khant@bacancy.com",
       "password": "123456",
@@ -43,18 +32,29 @@
       "birthdate": "2001-11-22",
       "role": "employee",
       "id": 4
+    },
+    {
+      "name": "Kunj Jansari",
+      "email": "kunj.jansari@bacancy.com",
+      "password": "123456",
+      "phone": "4587965245",
+      "address": "Ahmedabad, Gujarat",
+      "gender": "male",
+      "birthdate": "2003-10-15",
+      "role": "customer",
+      "id": 5
     }
   ],
   "accountRequests": [
     {
-      "id": 1,
-      "userId": 2,
-      "status": "approved"
-    },
-    {
       "userId": 3,
       "status": "approved",
       "id": 2
+    },
+    {
+      "userId": 5,
+      "status": "approved",
+      "id": 3
     }
   ],
   "accounts": [
@@ -64,6 +64,13 @@
       "customerId": 3,
       "accountNumber": "15890492319073",
       "id": 1
+    },
+    {
+      "accountType": "savings",
+      "balance": "1000",
+      "customerId": 5,
+      "accountNumber": "47590447541530",
+      "id": 2
     }
   ]
 }

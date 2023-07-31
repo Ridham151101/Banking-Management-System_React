@@ -1,10 +1,17 @@
 import { Container, Row, Col } from "react-bootstrap";
 import bankingImage from "../assets/banking.jpg";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LandingPage = () => {
-  // useEffect(() => {
-  //   sessionStorage.clear();
-  // }, []);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const signIn = sessionStorage.getItem("email") !== null;
+    if (signIn) {
+      navigate("/home");
+    }
+  }, []);
 
   return (
     <Container fluid>

@@ -6,14 +6,15 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 
-const Navigationbar = () => {
+const Navigationbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
-  const loggedIn = sessionStorage.getItem("email") !== null;
+  // const loggedIn = sessionStorage.getItem("email") !== null;
   const role = sessionStorage.getItem("role");
 
   const handleLogout = () => {
     // Clear sessionStorage and navigate to the login page
     sessionStorage.clear();
+    setIsLoggedIn(false);
     navigate("/");
   };
 
@@ -30,7 +31,7 @@ const Navigationbar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex align-items-center gap-3">
             {/* If user not logged in, display login and account request buttons */}
-            {!loggedIn && (
+            {!isLoggedIn && (
               <>
                 <Link to="/login" className="navbar-link">
                   Login
@@ -42,7 +43,7 @@ const Navigationbar = () => {
             )}
 
             {/* If user logged in, display appropriate buttons based on role */}
-            {loggedIn && (
+            {isLoggedIn && (
               <>
                 {/* Common buttons for all logged-in users */}
                 <Link to="/home" className="navbar-link">
@@ -78,7 +79,7 @@ const Navigationbar = () => {
             )}
 
             {/* Always show the logout button for logged-in users */}
-            {loggedIn && (
+            {isLoggedIn && (
               <Button variant="danger" onClick={handleLogout}>
                 Logout
               </Button>

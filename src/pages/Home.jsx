@@ -7,7 +7,7 @@ const Home = () => {
   useEffect(() => {
     const email = sessionStorage.getItem("email");
     if (email === null || email === "") {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 

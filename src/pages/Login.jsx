@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import LoginFormInput from "../components/LoginFormInput";
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -25,6 +25,7 @@ const Login = () => {
         } else {
           if (user.password === password) {
             toast.success("Successfully Logged in");
+            setIsLoggedIn(true);
             sessionStorage.setItem("email", user.email);
             navigate("/home");
           } else {
@@ -55,6 +56,7 @@ const Login = () => {
               // Proceed with login for admins and other roles
               if (user.password === password) {
                 toast.success("Successfully Logged in");
+                setIsLoggedIn(true);
                 sessionStorage.setItem("email", user.email);
                 sessionStorage.setItem("role", user.role);
                 navigate("/home");
