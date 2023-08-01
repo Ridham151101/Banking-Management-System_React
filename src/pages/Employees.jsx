@@ -3,9 +3,8 @@ import EmployeesTable from "../components/EmployeesTable";
 import AddEmployeeButton from "../components/AddEmployeeButton";
 import axios from "axios";
 
-const Employees = () => {
+const Employees = ({ role }) => {
   const [employees, setEmployees] = useState([]);
-  const role = sessionStorage.getItem("role");
 
   useEffect(() => {
     const fetchEmployees = async () => {

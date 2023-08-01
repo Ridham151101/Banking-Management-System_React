@@ -26,7 +26,9 @@ const Login = ({ setIsLoggedIn }) => {
           if (user.password === password) {
             toast.success("Successfully Logged in");
             setIsLoggedIn(true);
+            sessionStorage.setItem("userId", user.id);
             sessionStorage.setItem("email", user.email);
+            sessionStorage.setItem("role", user.role);
             navigate("/home");
           } else {
             toast.error("Please enter valid credentials");
@@ -57,6 +59,7 @@ const Login = ({ setIsLoggedIn }) => {
               if (user.password === password) {
                 toast.success("Successfully Logged in");
                 setIsLoggedIn(true);
+                sessionStorage.setItem("userId", user.id);
                 sessionStorage.setItem("email", user.email);
                 sessionStorage.setItem("role", user.role);
                 navigate("/home");

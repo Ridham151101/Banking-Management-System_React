@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 
-const Navigationbar = ({ isLoggedIn, setIsLoggedIn }) => {
+const Navigationbar = ({ customerId, isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
   // const loggedIn = sessionStorage.getItem("email") !== null;
   const role = sessionStorage.getItem("role");
@@ -63,7 +63,14 @@ const Navigationbar = ({ isLoggedIn, setIsLoggedIn }) => {
                       Customers
                     </Link>
                   </>
-                ) : null}
+                ) : (
+                  <Link
+                    to={`/account-details/${customerId}`}
+                    className="navbar-link"
+                  >
+                    Account Details
+                  </Link>
+                )}
 
                 <Link to="/transactions" className="navbar-link">
                   Transactions

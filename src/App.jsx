@@ -17,11 +17,17 @@ import Customers from "./pages/Customers";
 import Private from "./utils/PrivateRoute";
 import Public from "./utils/PublicRoute";
 import CustomerAccountDetails from "./pages/CustomerAccountDetails";
+import Transactions from "./pages/Transactions";
+import TransactionHistory from "./pages/TransactionHistory";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   const signIn = sessionStorage.getItem("email") !== null;
+
+  const userId = sessionStorage.getItem("userId");
+
+  const role = sessionStorage.getItem("role");
 
   useEffect(() => {
     // console.log("isLoggedIn: ", isLoggedIn);
@@ -38,6 +44,7 @@ const App = () => {
       <BrowserRouter>
         <AppContextProvider>
           <Navigationbar
+            customerId={userId}
             isLoggedIn={isLoggedIn}
             setIsLoggedIn={setIsLoggedIn}
           />
@@ -88,7 +95,7 @@ const App = () => {
               path="/employees"
               element={
                 <Private isLoggedIn={isLoggedIn}>
-                  <Employees />
+                  <Employees role={role} />
                 </Private>
               }
             />
@@ -105,6 +112,22 @@ const App = () => {
               element={
                 <Private isLoggedIn={isLoggedIn}>
                   <CustomerAccountDetails />
+                </Private>
+              }
+            />
+            <Route
+              path="/transactions"
+              element={
+                <Private isLoggedIn={isLoggedIn}>
+                  <Transactions userId={userId} role={role} />
+                </Private>
+              }
+            />
+            <Route
+              path="/transaction-history"
+              element={
+                <Private isLoggedIn={isLoggedIn}>
+                  <TransactionHistory userId={userId} role={role} />
                 </Private>
               }
             />

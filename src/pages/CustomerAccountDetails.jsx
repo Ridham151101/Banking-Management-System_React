@@ -8,6 +8,8 @@ function CustomerAccountDetails() {
   const [account, setAccount] = useState(null);
   const { customers } = useCustomersData();
 
+  const role = sessionStorage.getItem("role");
+
   useEffect(() => {
     // Fetch the account details for the specific customer using the customerId parameter
     const fetchAccountDetails = async () => {
@@ -47,7 +49,9 @@ function CustomerAccountDetails() {
       <p>Account Number: {account.accountNumber}</p>
       <p>Account Type: {account.accountType}</p>
       <p>Balance: {account.balance}</p>
-      <Link to="/customers">Back to Customers</Link>
+      {role === "admin" || role === "employee" ? (
+        <Link to="/customers">Back to Customers</Link>
+      ) : null}
     </div>
   );
 }

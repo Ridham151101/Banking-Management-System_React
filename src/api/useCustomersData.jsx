@@ -42,7 +42,17 @@ const useCustomersData = () => {
     fetchCustomersData();
   }, []);
 
-  return { customers, setCustomers };
+  const updateAccountBalance = async (accountId, newBalance) => {
+    try {
+      await axios.patch(`http://localhost:8000/accounts/${accountId}`, {
+        balance: newBalance,
+      });
+    } catch (error) {
+      console.error("Error updating account balance:", error);
+    }
+  };
+
+  return { customers, setCustomers, updateAccountBalance };
 };
 
 export default useCustomersData;
