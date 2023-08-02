@@ -78,7 +78,10 @@ const Navigationbar = ({ customerId, isLoggedIn, setIsLoggedIn }) => {
 
                 {/* Buttons for customer */}
                 {role === "customer" && (
-                  <Link to="/transaction-history" className="navbar-link">
+                  <Link
+                    to={`/transaction-history/${customerId}`}
+                    className="navbar-link"
+                  >
                     Transaction History
                   </Link>
                 )}

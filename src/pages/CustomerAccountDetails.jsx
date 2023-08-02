@@ -43,15 +43,22 @@ function CustomerAccountDetails() {
   }
 
   return (
-    <div>
-      <h1>Account Details</h1>
-      <p>Customer Name: {customer.name}</p>
-      <p>Account Number: {account.accountNumber}</p>
-      <p>Account Type: {account.accountType}</p>
-      <p>Balance: {account.balance}</p>
-      {role === "admin" || role === "employee" ? (
-        <Link to="/customers">Back to Customers</Link>
-      ) : null}
+    <div className="container">
+      <div className="card mt-4">
+        <div className="card-body">
+          <h1 className="card-title">Name: {customer.name}</h1>
+          <p className="card-text">Account Number: {account.accountNumber}</p>
+          <p className="card-text">Account Type: {account.accountType}</p>
+          <p className="card-text">
+            Account Balance: ${account.balance.toFixed(2)}
+          </p>
+          {role === "admin" || role === "employee" ? (
+            <Link to="/customers" className="btn btn-secondary">
+              Back
+            </Link>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }

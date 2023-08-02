@@ -60,14 +60,14 @@
   "accounts": [
     {
       "accountType": "current",
-      "balance": 8200.5,
+      "balance": 200.5,
       "customerId": 3,
       "accountNumber": "15890492319073",
       "id": 1
     },
     {
       "accountType": "savings",
-      "balance": 4700.2,
+      "balance": 12700.2,
       "customerId": 5,
       "accountNumber": "47590447541530",
       "id": 2
@@ -122,6 +122,30 @@
       "endingBalance": 8200.5,
       "createdAt": "2023-08-01T13:07:45.600Z",
       "id": 4
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 8000,
+      "description": "this is my second transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 4700.2,
+      "endingBalance": 12700.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-02T05:11:44.535Z",
+      "id": 5
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 8000,
+      "description": "this is my second transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 8200.5,
+      "endingBalance": 200.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-02T05:11:44.535Z",
+      "id": 6
     }
   ]
 }

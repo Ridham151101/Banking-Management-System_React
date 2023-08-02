@@ -66,7 +66,10 @@ const App = () => {
                 </Public>
               }
             />
-            <Route path="/home" element={<Home />} />
+            <Route
+              path="/home"
+              element={<Home customerId={userId} role={role} />}
+            />
             <Route
               path="/profile"
               element={
@@ -124,10 +127,10 @@ const App = () => {
               }
             />
             <Route
-              path="/transaction-history"
+              path="/transaction-history/:customerId"
               element={
                 <Private isLoggedIn={isLoggedIn}>
-                  <TransactionHistory userId={userId} role={role} />
+                  <TransactionHistory customerId={userId} role={role} />
                 </Private>
               }
             />
