@@ -12,10 +12,18 @@ const Navigationbar = ({ customerId, isLoggedIn, setIsLoggedIn }) => {
   const role = sessionStorage.getItem("role");
 
   const handleLogout = () => {
-    // Clear sessionStorage and navigate to the login page
-    sessionStorage.clear();
-    setIsLoggedIn(false);
-    navigate("/");
+    // Display the confirmation alert
+    const isConfirmed = window.confirm("Are you sure you want to logout?");
+
+    if (isConfirmed) {
+      // Clear sessionStorage and navigate to the login page
+      sessionStorage.clear();
+      setIsLoggedIn(false);
+      navigate("/");
+    } else {
+      // If "No" is clicked, return to the homepage
+      navigate("/home");
+    }
   };
 
   return (

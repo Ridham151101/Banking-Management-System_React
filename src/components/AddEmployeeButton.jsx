@@ -3,9 +3,11 @@ import { Button } from "react-bootstrap";
 
 const AddEmployeeButton = () => {
   return (
-    <Link to="/add-employee">
-      <Button variant="primary">Add Employee</Button>
-    </Link>
+    <div className="add-employee-button">
+      <Link to="/add-employee">
+        <Button variant="primary">Add Employee</Button>
+      </Link>
+    </div>
   );
 };
 

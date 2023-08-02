@@ -34,12 +34,10 @@ const UserProfile = () => {
           <p className="card-text">Birthdate: {user.birthdate}</p>
           <p className="card-text">Address: {user.address}</p>
           <p className="card-text">Role: {user.role}</p>
+          <Link to="/edit-profile" className="btn btn-primary">
+            Edit Profile
+          </Link>
         </div>
-      </div>
-      <div className="mt-3">
-        <Link to="/edit-profile" className="btn btn-primary">
-          Edit Profile
-        </Link>
       </div>
     </div>
   );

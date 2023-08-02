@@ -1,9 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TransactionHistory from "./TransactionHistory";
+import EmployeeCustomerPieChart from "../components/EmployeeCustomerPieChart";
+import GenderPieChart from "../components/GenderPieChart";
+import axios from "axios";
 
 const Home = ({ customerId, role }) => {
   const navigate = useNavigate();
+  const [employeesCount, setEmployeesCount] = useState(0);
+  const [customersCount, setCustomersCount] = useState(0);
+  const [maleCount, setMaleCount] = useState(0);
+  const [femaleCount, setFemaleCount] = useState(0);
 
   useEffect(() => {
     const email = sessionStorage.getItem("email");
@@ -12,21 +19,62 @@ const Home = ({ customerId, role }) => {
     }
   }, [navigate]);
 
+  useEffect(() => {
+    // Fetch the list of users from the API and count employees and customers
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/users");
+        const users = response.data;
+        const employees = users.filter((user) => user.role === "employee");
+        const customers = users.filter((user) => user.role === "customer");
+
+        setEmployeesCount(employees.length);
+        setCustomersCount(customers.length);
+
+        // Count male and female customers
+        const maleCustomers = customers.filter(
+          (customer) => customer.gender === "male"
+        );
+        const femaleCustomers = customers.filter(
+          (customer) => customer.gender === "female"
+        );
+
+        setMaleCount(maleCustomers.length);
+        setFemaleCount(femaleCustomers.length);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
   return (
-    <div className="container mt-5">
-      <h1 className="mb-4">Welcome to the Bank</h1>
+    <>
+      <h1 className="welcome-heading">Welcome to the Bank</h1>
 
       {role === "customer" && (
         <>
-          <h2 className="mb-3">Last 10 Transactions</h2>
+          {/* <CustomerAccountDetails /> */}
+          <h2>Last 10 Transactions</h2>
           <TransactionHistory customerId={customerId} />
         </>
       )}
 
       {role === "admin" || role === "employee" ? (
-        <p className="mt-4">You are an {role} user.</p>
+        <>
+          <p className="role-paragraph">You are an {role} user.</p>
+          <div className="home-container">
+            <EmployeeCustomerPieChart
+              employeesCount={employeesCount}
+              customersCount={customersCount}
+            />
+            <br />
+            <GenderPieChart maleCount={maleCount} femaleCount={femaleCount} />
+          </div>
+        </>
       ) : null}
-    </div>
+    </>
   );
 };
 

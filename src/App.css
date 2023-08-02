@@ -11,3 +11,34 @@
 .navbar-link {
   color: white;
 }
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.welcome-heading {
+  color: blue;
+  margin: 50px 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.role-paragraph {
+  text-align: center;
+  font-size: x-large;
+}
+
+.add-employee-button {
+  margin: 20px 0 20px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
