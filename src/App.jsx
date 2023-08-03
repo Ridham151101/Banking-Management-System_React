@@ -12,7 +12,6 @@ import Navigationbar from "./components/Navigationbar";
 import Employees from "./pages/Employees";
 import UserProfile from "./pages/UserProfile";
 import { AppContextProvider } from "./utils/AppContext";
-import EditProfile from "./pages/EditProfile";
 import Customers from "./pages/Customers";
 import Private from "./utils/PrivateRoute";
 import Public from "./utils/PublicRoute";
@@ -79,14 +78,6 @@ const App = () => {
               }
             />
             <Route
-              path="/edit-profile"
-              element={
-                <Private isLoggedIn={isLoggedIn}>
-                  <EditProfile />
-                </Private>
-              }
-            />
-            <Route
               path="/add-employee"
               element={
                 <Private isLoggedIn={isLoggedIn}>
@@ -130,7 +121,10 @@ const App = () => {
               path="/transaction-history/:customerId"
               element={
                 <Private isLoggedIn={isLoggedIn}>
-                  <TransactionHistory customerId={userId} role={role} />
+                  <TransactionHistory
+                    customerId={userId}
+                    limitTransactions={false}
+                  />
                 </Private>
               }
             />

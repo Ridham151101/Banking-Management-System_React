@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 import { toast } from "react-toastify";
 import CreateUserForm from "../components/CreateUserForm";
 
@@ -43,10 +44,6 @@ const AddEmployee = () => {
 
   // Function to check if the user is an admin
   const isAdmin = () => {
-    // You can implement your logic here to check if the user is an admin.
-    // For example, you can check if the user's role is "admin" in the session or local storage.
-    // For demonstration purposes, let's assume the user's role is stored in sessionStorage.
-
     const userRole = sessionStorage.getItem("role"); // Get the user's role from sessionStorage
     return userRole === "admin"; // Return true if the user's role is "admin", otherwise false
   };
@@ -59,12 +56,20 @@ const AddEmployee = () => {
 
   return (
     <>
-      <CreateUserForm
-        state={state}
-        handleFieldChange={handleFieldChange}
-        handleSubmit={handleSubmit}
-        showRoleField={false} // Hide the role field in the form
-      />
+      {/* AddEmployee Form as a Modal */}
+      <Modal show={true} onHide={() => navigate("/home")}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Employee</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <CreateUserForm
+            state={state}
+            handleFieldChange={handleFieldChange}
+            handleSubmit={handleSubmit}
+            showRoleField={false}
+          />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

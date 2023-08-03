@@ -1,5 +1,6 @@
 import CustomerRow from "../components/CustomerRow";
 import useCustomersData from "../api/useCustomersData";
+import { Modal } from "react-bootstrap";
 import axios from "axios";
 import AccountForm from "../components/AccountForm";
 import { useState } from "react";
@@ -76,13 +77,19 @@ const Customers = () => {
           ))}
         </tbody>
       </table>
-      {showForm && (
-        <AccountForm
-          customerId={selectedCustomerId}
-          handleApproveRequest={handleApproveRequest}
-          onClose={handleCloseForm}
-        />
-      )}
+      {/* AccountForm as a Modal */}
+      <Modal show={showForm} onHide={handleCloseForm}>
+        <Modal.Header closeButton>
+          <Modal.Title>Create New Account</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <AccountForm
+            customerId={selectedCustomerId}
+            handleApproveRequest={handleApproveRequest}
+            onClose={handleCloseForm}
+          />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

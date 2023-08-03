@@ -34,6 +34,14 @@
   margin: 20px 0 20px 0;
 }
 
+.navbar {
+  margin-bottom: 50px;
+}
+
+.last-10-transaction-heading {
+  text-align: center;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

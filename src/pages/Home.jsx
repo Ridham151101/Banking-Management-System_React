@@ -56,8 +56,11 @@ const Home = ({ customerId, role }) => {
       {role === "customer" && (
         <>
           {/* <CustomerAccountDetails /> */}
-          <h2>Last 10 Transactions</h2>
-          <TransactionHistory customerId={customerId} />
+          <h2 className="last-10-transaction-heading">Last 10 Transactions</h2>
+          <TransactionHistory
+            customerId={customerId}
+            limitTransactions={true}
+          />
         </>
       )}
 

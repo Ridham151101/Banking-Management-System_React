@@ -13,15 +13,29 @@ async function fetchAccountDetailsByAccountNumber(accountNumber) {
   }
 }
 
-function TransactionHistory({ customerId }) {
+function TransactionHistory({ customerId, limitTransactions }) {
   const [transactions, setTransactions] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/Transactions?customerId=${customerId}`
-        );
+        const startIndex = (currentPage - 1) * 2;
+
+        let response;
+
+        if (limitTransactions) {
+          // Fetch the last 10 transactions for the specific customer using the customerId parameter
+          response = await axios.get(
+            `http://localhost:8000/Transactions?customerId=${customerId}&_limit=10&_sort=createdAt&_order=desc`
+          );
+        } else {
+          // Fetch all transactions for the specific customer using the customerId parameter
+          response = await axios.get(
+            `http://localhost:8000/Transactions?customerId=${customerId}&_start=${startIndex}&_limit=2&_sort=createdAt&_order=desc`
+          );
+        }
+
         const transactionsData = response.data;
 
         // Fetch recipient account details for transfer transactions
@@ -52,7 +66,15 @@ function TransactionHistory({ customerId }) {
       }
     };
     fetchTransactions();
-  }, [customerId]);
+  }, [customerId, limitTransactions, currentPage]);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
 
   return (
     <div className="container">
@@ -88,6 +110,25 @@ function TransactionHistory({ customerId }) {
             ))}
           </tbody>
         </table>
+        {/* Pagination controls */}
+        {!limitTransactions && (
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn btn-primary me-2"
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+            >
+              Prev
+            </button>
+            <button
+              className="btn btn-primary"
+              onClick={handleNextPage}
+              disabled={transactions.length < 2}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

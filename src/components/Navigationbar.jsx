@@ -31,7 +31,7 @@ const Navigationbar = ({ customerId, isLoggedIn, setIsLoggedIn }) => {
       expand="lg"
       bg="dark"
       data-bs-theme="dark"
-      className="bg-body-tertiary"
+      className="bg-body-tertiary navbar"
     >
       <Container>
         <Navbar.Brand href="/">Sahajanand Bank</Navbar.Brand>
