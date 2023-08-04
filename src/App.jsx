@@ -42,11 +42,9 @@ const App = () => {
       <ToastContainer theme="colored"></ToastContainer>
       <BrowserRouter>
         <AppContextProvider>
-          <Navigationbar
-            customerId={userId}
-            isLoggedIn={isLoggedIn}
-            setIsLoggedIn={setIsLoggedIn}
-          />
+          {isLoggedIn && (
+            <Navigationbar customerId={userId} setIsLoggedIn={setIsLoggedIn} />
+          )}
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route

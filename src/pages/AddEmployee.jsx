@@ -36,7 +36,7 @@ const AddEmployee = () => {
       });
 
       toast.success("New employee created successfully!");
-      navigate("/home"); // Redirect the admin to the home page
+      navigate("/employees"); // Redirect the admin to the home page
     } catch (error) {
       toast.error("Failed to create new employee.");
     }

@@ -7,7 +7,7 @@ const FormInput = ({ type, label, value, onChange }) => {
         {label} <span className="errmsg">*</span>
       </label>
       {type === "radio" ? (
-        <div>
+        <div id="gender-field">
           <input
             type="radio"
             checked={value === "male"}

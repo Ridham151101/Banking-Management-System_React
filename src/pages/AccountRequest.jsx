@@ -1,8 +1,12 @@
 import React, { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import CreateUserForm from "../components/CreateUserForm";
 import axios from "axios";
+import bankingImage from "../assets/banking.jpg";
+import FormInput from "../components/FormInput";
+import FormTextArea from "../components/FormTextArea";
+import { Button } from "react-bootstrap";
+import "../Styles/AccountRequest.css";
 
 const initialState = {
   name: "",
@@ -83,14 +87,98 @@ const AccountRequest = () => {
   const handleFieldChange = (field, value) => {
     dispatch({ type: "UPDATE_FIELD", field, value });
   };
+
   return (
-    <div className="offset-lg-3 col-lg-6">
-      <CreateUserForm
-        state={state}
-        handleFieldChange={handleFieldChange}
-        handleSubmit={handleSubmit}
-      />
-    </div>
+    <>
+      <div className="main-container">
+        <img src={bankingImage} alt="Banking" />
+      </div>
+      <div className="vh-100 p-4 d-flex align-items-center">
+        <div className="offset-lg-4 col-lg-4">
+          <form
+            className="container"
+            style={{ textAlign: "left" }}
+            onSubmit={handleSubmit}
+          >
+            <div id="card" className="card">
+              <div id="card-header" className="card-header">
+                <h1>Account Request</h1>
+              </div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-lg-6">
+                    <FormInput
+                      label="Name"
+                      value={state.name}
+                      onChange={(value) => handleFieldChange("name", value)}
+                    />
+                  </div>
+                  <div className="col-lg-6">
+                    <FormInput
+                      label="Email"
+                      value={state.email}
+                      onChange={(value) => handleFieldChange("email", value)}
+                    />
+                  </div>
+                  <div className="col-lg-6">
+                    <FormInput
+                      type="date"
+                      label="Birthdate"
+                      value={state.birthdate}
+                      onChange={(value) =>
+                        handleFieldChange("birthdate", value)
+                      }
+                    />
+                  </div>
+                  <div className="col-lg-6">
+                    <FormInput
+                      label="Password"
+                      value={state.password}
+                      type="password"
+                      onChange={(value) => handleFieldChange("password", value)}
+                    />
+                  </div>
+                  <div className="col-lg-6">
+                    <FormInput
+                      label="Phone"
+                      value={state.phone}
+                      onChange={(value) => handleFieldChange("phone", value)}
+                    />
+                  </div>
+                  <div className="col-lg-12">
+                    <FormTextArea
+                      label="Address"
+                      value={state.address}
+                      onChange={(value) => handleFieldChange("address", value)}
+                    />
+                  </div>
+                  <div className="col-lg-6">
+                    <FormInput
+                      type="radio"
+                      label="Gender"
+                      value={state.gender}
+                      onChange={(value) => handleFieldChange("gender", value)}
+                      options={[
+                        { label: "Male", value: "male" },
+                        { label: "Female", value: "female" },
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="card-footer" className="card-footer">
+                <Button type="submit" id="register-button">
+                  Register
+                </Button>
+                <Link to="/">
+                  <Button id="back-button">Back</Button>
+                </Link>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

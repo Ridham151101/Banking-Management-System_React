@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import LoginFormInput from "../components/LoginFormInput";
+import bankingImage from "../assets/banking.jpg";
+import "../Styles/Login.css";
 
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
@@ -91,12 +93,15 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     <>
-      <div className="row">
-        <div className="offset-lg-3 col-lg-6">
+      <div className="main-container">
+        <img src={bankingImage} alt="Banking" />
+      </div>
+      <div className="vh-100 p-4 d-flex align-items-center">
+        <div className="offset-lg-4 col-lg-4">
           <form onSubmit={ProceedLogin} className="container">
-            <div className="card">
-              <div className="card-header">
-                <h1>User Login</h1>
+            <div id="card" className="card">
+              <div id="card-header" className="card-header">
+                <h1>Login to Sahajanand Bank</h1>
               </div>
               <div className="card-body">
                 <LoginFormInput
@@ -106,13 +111,13 @@ const Login = ({ setIsLoggedIn }) => {
                   setPassword={setPassword}
                 />
               </div>
-              <div className="card-footer">
-                <Button type="submit" style={{ marginRight: "10px" }}>
+              <div id="card-footer" className="card-footer">
+                <Button onClick={ProceedLogin} id="login">
                   Login
                 </Button>
-                <NavLink className="btn btn-success" to="/account-request">
-                  Account Request
-                </NavLink>
+                <Link to="/account-request">
+                  <Button id="account-request">Account Request</Button>
+                </Link>
               </div>
             </div>
           </form>

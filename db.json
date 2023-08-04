@@ -76,6 +76,28 @@
       "birthdate": "2001-10-23",
       "role": "employee",
       "id": 8
+    },
+    {
+      "name": "Jainik Suthar",
+      "email": "jainik.suthar@bacancy.com",
+      "password": "123456",
+      "phone": "5214521452",
+      "address": "Gujarat, India",
+      "gender": "male",
+      "birthdate": "2001-02-03",
+      "role": "customer",
+      "id": 9
+    },
+    {
+      "name": "Prince Kathiriya",
+      "email": "prince.kathiriya@gmail.com",
+      "password": "123456",
+      "phone": "2541785698",
+      "address": "surat, gujarat, india",
+      "gender": "male",
+      "birthdate": "2003-12-31",
+      "role": "employee",
+      "id": 10
     }
   ],
   "accountRequests": [
@@ -98,6 +120,11 @@
       "userId": 7,
       "status": "pending",
       "id": 5
+    },
+    {
+      "userId": 9,
+      "status": "pending",
+      "id": 6
     }
   ],
   "accounts": [

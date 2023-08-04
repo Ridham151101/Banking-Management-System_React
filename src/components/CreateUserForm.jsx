@@ -7,14 +7,6 @@ import { Link } from "react-router-dom";
 const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
   const { name, email, password, phone, address, gender, birthdate } = state;
 
-  let backButtonLink = "/";
-
-  if (state.role === "customer") {
-    backButtonLink = "/";
-  } else {
-    backButtonLink = "/employees";
-  }
-
   return (
     <>
       <form
@@ -23,11 +15,6 @@ const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
         onSubmit={handleSubmit}
       >
         <div className="card">
-          {state.role === "customer" && (
-            <div className="card-header">
-              <h1>Account Request</h1>
-            </div>
-          )}
           <div className="card-body">
             <div className="row">
               <div className="col-lg-6">
@@ -88,7 +75,7 @@ const CreateUserForm = ({ state, handleFieldChange, handleSubmit }) => {
             <Button type="submit" style={{ marginRight: "10px" }}>
               Register
             </Button>
-            <Link to={backButtonLink}>
+            <Link to="/employees">
               <Button variant="danger">Back</Button>
             </Link>
           </div>

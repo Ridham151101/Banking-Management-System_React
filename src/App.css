@@ -9,7 +9,13 @@
 }
 
 .navbar-link {
+  text-decoration: none;
   color: white;
+}
+
+.navbar-link:hover {
+  opacity: 0.7;
+  transition: ease-in-out;
 }
 
 .home-container {
@@ -34,12 +40,14 @@
   margin: 20px 0 20px 0;
 }
 
-.navbar {
-  margin-bottom: 50px;
-}
-
 .last-10-transaction-heading {
   text-align: center;
+}
+
+#gender-field {
+  display: flex;
+  padding: 0 5px;
+  gap: 0.3rem;
 }
 
 @keyframes fadeIn {

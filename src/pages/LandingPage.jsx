@@ -1,7 +1,8 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import bankingImage from "../assets/banking.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import "../Styles/LandingPage.css";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -14,28 +15,22 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Container fluid>
-      <Row>
-        <Col>
-          <img
-            src={bankingImage}
-            alt="Banking"
-            style={{ width: "100%", height: "auto" }}
-          />
-        </Col>
-
-        <Col>
-          <div className="d-flex flex-column align-items-center justify-content-center h-100">
-            <h1>Welcome to Our Banking App</h1>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              euismod eros ac dolor eleifend, sit amet fringilla odio ultricies.
-            </p>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <div className="main-container">
+        <img src={bankingImage} alt="Banking" />
+      </div>
+      <div className="d-flex flex-column align-items-center justify-content-center h-100 sub-container">
+        <span className="heading">Welcome to Sahajanand Bank</span>
+        <div>
+          <Link to="/login">
+            <Button id="login-button">Login</Button>
+          </Link>
+          <Link to="/account-request">
+            <Button id="account-request-button">Account Request</Button>
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };
 
