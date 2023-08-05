@@ -75,7 +75,7 @@ const TransactionForm = ({
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button id="buttons" type="submit" className="btn btn-primary">
         Submit
       </button>
     </form>

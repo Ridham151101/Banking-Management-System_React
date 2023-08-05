@@ -18,8 +18,8 @@ const GenderPieChart = ({ maleCount, femaleCount }) => {
           datasets: [
             {
               data: [maleCount, femaleCount],
-              backgroundColor: ["#36A2EB", "#FF6384"],
-              hoverBackgroundColor: ["#36A2EB", "#FF6384"],
+              backgroundColor: ["#34487a", "#D0DB97"],
+              hoverBackgroundColor: ["#34487a", "#D0DB97"],
             },
           ],
         },

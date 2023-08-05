@@ -112,12 +112,16 @@ const Login = ({ setIsLoggedIn }) => {
                 />
               </div>
               <div id="card-footer" className="card-footer">
-                <Button onClick={ProceedLogin} id="login">
-                  Login
-                </Button>
-                <Link to="/account-request">
-                  <Button id="account-request">Account Request</Button>
-                </Link>
+                <center>
+                  <Button onClick={ProceedLogin} id="login">
+                    Login
+                  </Button>
+                </center>
+                <center>
+                  <Link id="account-request" to="/account-request">
+                    <u>Create New Account?</u>
+                  </Link>
+                </center>
               </div>
             </div>
           </form>

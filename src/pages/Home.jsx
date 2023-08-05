@@ -51,7 +51,7 @@ const Home = ({ customerId, role }) => {
 
   return (
     <>
-      <h1 className="welcome-heading">Welcome to the Bank</h1>
+      <h1 className="welcome-heading">Welcome to the Sahajanand Bank</h1>
 
       {role === "customer" && (
         <>
@@ -66,7 +66,7 @@ const Home = ({ customerId, role }) => {
 
       {role === "admin" || role === "employee" ? (
         <>
-          <p className="role-paragraph">You are an {role} user.</p>
+          {/* <p className="role-paragraph">You are an {role} user.</p> */}
           <div className="home-container">
             <EmployeeCustomerPieChart
               employeesCount={employeesCount}

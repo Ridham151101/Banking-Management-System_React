@@ -12,6 +12,7 @@ const CustomerRow = ({ customer, handleCreateAccount }) => {
           <button
             onClick={() => handleCreateAccount(customer.id)}
             className="btn btn-primary"
+            id="buttons"
           >
             Approve
           </button>
@@ -19,6 +20,7 @@ const CustomerRow = ({ customer, handleCreateAccount }) => {
 
         {customer.accountRequestStatus === "approved" && (
           <Link
+            id="buttons"
             to={`/account-details/${customer.id}`}
             className="btn btn-primary"
           >

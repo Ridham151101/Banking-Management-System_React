@@ -27,9 +27,12 @@ const Navigationbar = ({ customerId, setIsLoggedIn }) => {
   };
 
   return (
-    <Navbar expand="lg" style={{ background: "#002ac9e0" }}>
+    <Navbar expand="lg" style={{ background: "#34487a" }}>
       <Container fluid>
-        <Navbar.Brand href="/" style={{ color: "#fff" }}>
+        <Navbar.Brand
+          href="/"
+          style={{ color: "#fff", fontSize: "25px", fontWeight: "600" }}
+        >
           Sahajanand Bank
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -5,7 +5,7 @@ const AddEmployeeButton = () => {
   return (
     <div className="add-employee-button">
       <Link to="/add-employee">
-        <Button variant="primary">Add Employee</Button>
+        <Button id="buttons">Add Employee</Button>
       </Link>
     </div>
   );

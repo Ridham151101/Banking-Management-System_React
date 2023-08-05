@@ -10,6 +10,7 @@ const FormInput = ({ type, label, value, onChange }) => {
         <div id="gender-field">
           <input
             type="radio"
+            id="radio-button"
             checked={value === "male"}
             onChange={() => onChange("male")}
             value="male"
@@ -18,6 +19,7 @@ const FormInput = ({ type, label, value, onChange }) => {
           <label>Male</label>
           <input
             type="radio"
+            id="radio-button"
             checked={value === "female"}
             onChange={() => onChange("female")}
             value="female"

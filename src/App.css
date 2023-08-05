@@ -21,11 +21,12 @@
 .home-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: start;
 }
 
 .welcome-heading {
-  color: blue;
+  color: #34487a;
   margin: 50px 0;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
@@ -48,6 +49,15 @@
   display: flex;
   padding: 0 5px;
   gap: 0.3rem;
+}
+
+#buttons {
+  background: #34487a;
+  padding: 10px;
+  border: 20px;
+  color: rgb(255 255 255);
+  font-family: sans-serif;
+  font-size: 18px;
 }
 
 @keyframes fadeIn {

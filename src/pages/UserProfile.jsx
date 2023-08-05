@@ -71,7 +71,9 @@ const UserProfile = () => {
           <p className="card-text">Birthdate: {user.birthdate}</p>
           <p className="card-text">Address: {user.address}</p>
           <p className="card-text">Role: {user.role}</p>
-          <Button onClick={handleOpenModal}>Edit Profile</Button>
+          <Button id="buttons" onClick={handleOpenModal}>
+            Edit Profile
+          </Button>
         </div>
       </div>
 

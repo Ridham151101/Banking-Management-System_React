@@ -5,6 +5,7 @@ const LoginFormInput = ({ email, setEmail, password, setPassword }) => {
   return (
     <>
       <FormInput type="text" label="Email" value={email} onChange={setEmail} />
+      <br />
       <FormInput
         type="password"
         label="Password"
