@@ -114,6 +114,7 @@ function TransactionHistory({ customerId, limitTransactions }) {
         {!limitTransactions && (
           <div className="d-flex justify-content-center">
             <button
+              id="buttons"
               className="btn btn-primary me-2"
               onClick={handlePrevPage}
               disabled={currentPage === 1}
@@ -121,6 +122,7 @@ function TransactionHistory({ customerId, limitTransactions }) {
               Prev
             </button>
             <button
+              id="buttons"
               className="btn btn-primary"
               onClick={handleNextPage}
               disabled={transactions.length < 2}

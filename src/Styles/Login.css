@@ -24,6 +24,10 @@
   font-size: 20px;
 }
 
+#login:hover {
+  background: rgba(208, 219, 151, 0.9);
+}
+
 #account-request {
   margin: 10px 30px;
   border: 20px;

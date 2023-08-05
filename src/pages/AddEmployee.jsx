@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { toast } from "react-toastify";
 import CreateUserForm from "../components/CreateUserForm";
 
@@ -57,7 +57,7 @@ const AddEmployee = () => {
   return (
     <>
       {/* AddEmployee Form as a Modal */}
-      <Modal show={true} onHide={() => navigate("/home")}>
+      <Modal show={true} onHide={() => navigate("/employees")}>
         <Modal.Header closeButton>
           <Modal.Title>Add Employee</Modal.Title>
         </Modal.Header>
@@ -65,10 +65,18 @@ const AddEmployee = () => {
           <CreateUserForm
             state={state}
             handleFieldChange={handleFieldChange}
-            handleSubmit={handleSubmit}
+            // handleSubmit={handleSubmit}
             showRoleField={false}
           />
         </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button> */}
+          <Button id="buttons" onClick={handleSubmit}>
+            Register
+          </Button>
+        </Modal.Footer>
       </Modal>
     </>
   );

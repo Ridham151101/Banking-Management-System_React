@@ -26,7 +26,7 @@ const Employees = ({ role }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container mt-3">
         <h1>Employee List</h1>
         {role === "admin" && <AddEmployeeButton />}
         <EmployeesTable employees={employees} />

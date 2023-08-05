@@ -91,7 +91,9 @@ const CustomerTransaction = ({ customerId }) => {
 
   return (
     <div className="container">
-      <h1>Customer Transaction</h1>
+      <center>
+        <h1>Customer Transaction</h1>
+      </center>
       <TransactionForm
         accountNumber={receipentAccountNumber}
         setAccountNumber={setReceipentAccountNumber}

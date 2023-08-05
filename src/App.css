@@ -18,6 +18,16 @@
   transition: ease-in-out;
 }
 
+#logout-button {
+  border-color: white;
+  background-color: transparent;
+}
+
+#logout-button:hover {
+  border-color: red;
+  background-color: red;
+}
+
 .home-container {
   display: flex;
   flex-direction: row;
@@ -53,11 +63,11 @@
 
 #buttons {
   background: #34487a;
-  padding: 10px;
+  padding: 7px;
   border: 20px;
   color: rgb(255 255 255);
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 @keyframes fadeIn {

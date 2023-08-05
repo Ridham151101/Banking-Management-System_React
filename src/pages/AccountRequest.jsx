@@ -106,7 +106,7 @@ const AccountRequest = () => {
               </div>
               <div className="card-body">
                 <div className="row">
-                  <div className="col-lg-6 mb-3">
+                  <div className="col-lg-6">
                     <FormInput
                       label="Name"
                       value={state.name}
@@ -120,7 +120,7 @@ const AccountRequest = () => {
                       onChange={(value) => handleFieldChange("email", value)}
                     />
                   </div>
-                  <div className="col-lg-6 mb-3">
+                  <div className="col-lg-6">
                     <FormInput
                       type="date"
                       label="Birthdate"
@@ -138,14 +138,14 @@ const AccountRequest = () => {
                       onChange={(value) => handleFieldChange("password", value)}
                     />
                   </div>
-                  <div className="col-lg-6 mb-3">
+                  <div className="col-lg-6">
                     <FormInput
                       label="Phone"
                       value={state.phone}
                       onChange={(value) => handleFieldChange("phone", value)}
                     />
                   </div>
-                  <div className="col-lg-12 mb-3">
+                  <div className="col-lg-12">
                     <FormTextArea
                       label="Address"
                       value={state.address}

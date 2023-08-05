@@ -98,6 +98,17 @@
       "birthdate": "2003-12-31",
       "role": "employee",
       "id": 10
+    },
+    {
+      "name": "Dharmik Pavasiya",
+      "email": "dharmik.pavasiya@bacancy.com",
+      "password": "123456",
+      "phone": "2548758956",
+      "address": "Surat, India",
+      "gender": "male",
+      "birthdate": "2002-12-20",
+      "role": "employee",
+      "id": 11
     }
   ],
   "accountRequests": [

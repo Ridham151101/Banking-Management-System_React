@@ -2,7 +2,7 @@ import React from "react";
 
 const FormTextArea = ({ label, value, onChange }) => {
   return (
-    <div className="form-group">
+    <div className="form-group mb-3">
       <label>
         {label} <span style={{ color: "red" }}>*</span>
       </label>

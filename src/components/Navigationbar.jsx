@@ -81,7 +81,7 @@ const Navigationbar = ({ customerId, setIsLoggedIn }) => {
               )}
             </>
 
-            <Button variant="danger" onClick={handleLogout}>
+            <Button id="logout-button" variant="danger" onClick={handleLogout}>
               Logout
             </Button>
           </Nav>

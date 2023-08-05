@@ -34,6 +34,10 @@ img {
   font-weight: 600;
 }
 
+#login-button:hover {
+  background: rgba(208, 219, 151, 0.9);
+}
+
 #account-request-button {
   margin: 10px 30px;
   width: 300px;
@@ -44,4 +48,8 @@ img {
   font-family: sans-serif;
   font-size: 30px;
   font-weight: 600;
+}
+
+#account-request-button:hover {
+  background: rgba(0, 168, 235, 0.9);
 }

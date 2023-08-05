@@ -55,7 +55,7 @@ const Customers = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-3">
       <h1>Customers</h1>
       <table className="table">
         <thead>

@@ -50,10 +50,10 @@ const EditProfileModal = ({
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        {/* <Button variant="secondary" onClick={handleClose}>
           Close
-        </Button>
-        <Button variant="primary" onClick={handleUpdateProfile}>
+        </Button> */}
+        <Button id="buttons" onClick={handleUpdateProfile}>
           Update Profile
         </Button>
       </Modal.Footer>

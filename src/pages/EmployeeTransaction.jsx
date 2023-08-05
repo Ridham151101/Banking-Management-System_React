@@ -71,7 +71,9 @@ const EmployeeTransaction = ({ employeeId }) => {
 
   return (
     <div className="container">
-      <h1>Employee Transaction</h1>
+      <center>
+        <h1>Employee Transaction</h1>
+      </center>
       <TransactionForm
         accountNumber={accountNumber}
         transactionType={transactionType}

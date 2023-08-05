@@ -9,6 +9,10 @@
   font-size: 23px;
 }
 
+#register-button:hover {
+  background: rgba(208, 219, 151, 0.9);
+}
+
 input[type="radio"]#radio-button {
   accent-color: #34487a;
 }
