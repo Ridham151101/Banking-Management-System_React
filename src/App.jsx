@@ -46,7 +46,14 @@ const App = () => {
             <Navigationbar customerId={userId} setIsLoggedIn={setIsLoggedIn} />
           )}
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route
+              path="/"
+              element={
+                <Public isLoggedIn={isLoggedIn}>
+                  <LandingPage />
+                </Public>
+              }
+            />
             <Route
               path="/login"
               element={
