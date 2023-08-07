@@ -70,7 +70,7 @@ const AccountForm = ({ customerId, onClose, handleApproveRequest }) => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button id="buttons" type="submit" className="btn btn-primary">
           Create Account
         </button>
       </form>
