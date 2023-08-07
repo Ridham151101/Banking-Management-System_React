@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import EditProfileModal from "./EditProfileModal";
+import { useAppContext } from "../utils/AppContext";
 
 const UserProfile = () => {
-  const [user, setUser] = useState({});
+  const { user, setUser } = useAppContext();
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({}); // New state for the form data changes
 

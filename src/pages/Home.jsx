@@ -12,12 +12,12 @@ const Home = ({ customerId, role }) => {
   const [maleCount, setMaleCount] = useState(0);
   const [femaleCount, setFemaleCount] = useState(0);
 
-  useEffect(() => {
-    const email = sessionStorage.getItem("email");
-    if (email === null || email === "") {
-      navigate("/");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const email = sessionStorage.getItem("email");
+  //   if (email === null || email === "") {
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
   useEffect(() => {
     // Fetch the list of users from the API and count employees and customers

@@ -5,9 +5,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
+import { useAppContext } from "../utils/AppContext";
 
-const Navigationbar = ({ customerId, setIsLoggedIn }) => {
+const Navigationbar = ({ customerId }) => {
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useAppContext();
   // const loggedIn = sessionStorage.getItem("email") !== null;
   const role = sessionStorage.getItem("role");
 

@@ -6,10 +6,12 @@ import axios from "axios";
 import LoginFormInput from "../components/LoginFormInput";
 import bankingImage from "../assets/banking.jpg";
 import "../Styles/Login.css";
+import { useAppContext } from "../utils/AppContext";
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setIsLoggedIn } = useAppContext();
   const navigate = useNavigate();
 
   const handleCustomerLogin = (user) => {

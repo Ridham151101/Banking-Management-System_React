@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-function Private({ isLoggedIn, children }) {
+import { useAppContext } from "./AppContext";
+function Private({ children }) {
+  const { isLoggedIn } = useAppContext();
+
+  console.log("isLoggedIn: ", isLoggedIn);
+
   if (!isLoggedIn) {
     return <Navigate to="/" replace />;
   }
