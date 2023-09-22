@@ -4,10 +4,392 @@
       "name": "Ridham Patel",
       "email": "ridham.patel@bacancy.com",
       "password": "123456",
-      "phone": "6355660448",
+      "phone": "9601292020",
       "address": "A-49, Pramukhchhaya Society,\nPunagam, Yogichowk\nNear Silver Chowk",
       "gender": "male",
+      "birthdate": "2001-11-15",
+      "role": "admin",
       "id": 1
+    },
+    {
+      "name": "Krupa Khant",
+      "email": "krupa.khant@bacancy.com",
+      "password": "123456",
+      "phone": "9999999999",
+      "address": "Valsad, Gujarat, India",
+      "gender": "female",
+      "birthdate": "2002-05-29",
+      "role": "customer",
+      "id": 3
+    },
+    {
+      "name": "Heet Sabhaya",
+      "email": "heet.sabhaya@bacancy.com",
+      "password": "123456",
+      "phone": "8569854756",
+      "address": "Rajkot, Gujarat",
+      "gender": "male",
+      "birthdate": "2001-11-22",
+      "role": "employee",
+      "id": 4
+    },
+    {
+      "name": "Kunj Jansari",
+      "email": "kunj.jansari@bacancy.com",
+      "password": "123456",
+      "phone": "4587965245",
+      "address": "Ahmedabad, Gujarat",
+      "gender": "male",
+      "birthdate": "2003-10-15",
+      "role": "customer",
+      "id": 5
+    },
+    {
+      "name": "Saurav Brahmbhat",
+      "email": "saurav.brahmbhatt@bacancy.com",
+      "password": "123456",
+      "phone": "5244265632",
+      "address": "Ahmedabad, india",
+      "gender": "male",
+      "birthdate": "2001-02-01",
+      "role": "customer",
+      "id": 6
+    },
+    {
+      "name": "Aarti Odedara",
+      "email": "aarti.odedara@bacancy.com",
+      "password": "123456",
+      "phone": "7896541236",
+      "address": "Rajkot, Gujarat, India",
+      "gender": "female",
+      "birthdate": "2002-03-25",
+      "role": "customer",
+      "id": 7
+    },
+    {
+      "name": "Nirmit Valand",
+      "email": "nirmit.valand@bacancy.com",
+      "password": "123456",
+      "phone": "5236521452",
+      "address": "Modasa, India",
+      "gender": "male",
+      "birthdate": "2001-10-23",
+      "role": "employee",
+      "id": 8
+    },
+    {
+      "name": "Jainik Suthar",
+      "email": "jainik.suthar@bacancy.com",
+      "password": "123456",
+      "phone": "5214521452",
+      "address": "Gujarat, India",
+      "gender": "male",
+      "birthdate": "2001-02-03",
+      "role": "customer",
+      "id": 9
+    },
+    {
+      "name": "Prince Kathiriya",
+      "email": "prince.kathiriya@gmail.com",
+      "password": "123456",
+      "phone": "2541785698",
+      "address": "surat, gujarat, india",
+      "gender": "male",
+      "birthdate": "2003-12-31",
+      "role": "employee",
+      "id": 10
+    },
+    {
+      "name": "Dharmik Pavasiya",
+      "email": "dharmik.pavasiya@bacancy.com",
+      "password": "123456",
+      "phone": "2548758956",
+      "address": "Surat, India",
+      "gender": "male",
+      "birthdate": "2002-12-20",
+      "role": "employee",
+      "id": 11
+    }
+  ],
+  "accountRequests": [
+    {
+      "userId": 3,
+      "status": "approved",
+      "id": 2
+    },
+    {
+      "userId": 5,
+      "status": "approved",
+      "id": 3
+    },
+    {
+      "userId": 6,
+      "status": "approved",
+      "id": 4
+    },
+    {
+      "userId": 7,
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "userId": 9,
+      "status": "pending",
+      "id": 6
+    }
+  ],
+  "accounts": [
+    {
+      "accountType": "current",
+      "balance": 42400.5,
+      "customerId": 3,
+      "accountNumber": "15890492319073",
+      "id": 1
+    },
+    {
+      "accountType": "savings",
+      "balance": 17000.2,
+      "customerId": 5,
+      "accountNumber": "47590447541530",
+      "id": 2
+    },
+    {
+      "accountType": "current",
+      "balance": 3500,
+      "customerId": 6,
+      "accountNumber": "24351215059118",
+      "id": 3
+    }
+  ],
+  "Transactions": [
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "employeeId": 4,
+      "amount": 200,
+      "description": "this is first transaction",
+      "transactionType": "withdrawal",
+      "startingBalance": 1000,
+      "endingBalance": 800,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-01T04:20:08.528Z",
+      "id": 1
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 200,
+      "description": "thisi is transfer by krupa.",
+      "transactionType": "transfer",
+      "startingBalance": 4500.2,
+      "endingBalance": 4700.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-01T13:06:40.815Z",
+      "id": 2
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 200,
+      "description": "thisi is transfer by krupa.",
+      "transactionType": "transfer",
+      "startingBalance": 2400.5,
+      "endingBalance": 2200.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-01T13:06:40.815Z",
+      "id": 3
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "employeeId": 1,
+      "amount": 6000,
+      "description": "this is transaction by ridham",
+      "transactionType": "deposit",
+      "startingBalance": 2200.5,
+      "endingBalance": 8200.5,
+      "createdAt": "2023-08-01T13:07:45.600Z",
+      "id": 4
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 8000,
+      "description": "this is my second transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 4700.2,
+      "endingBalance": 12700.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-02T05:11:44.535Z",
+      "id": 5
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 8000,
+      "description": "this is my second transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 8200.5,
+      "endingBalance": 200.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-02T05:11:44.535Z",
+      "id": 6
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 100,
+      "description": "this is transaction by krupa to kunj",
+      "transactionType": "transfer",
+      "startingBalance": 12700.2,
+      "endingBalance": 12800.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T05:23:11.738Z",
+      "id": 7
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 100,
+      "description": "this is transaction by krupa to kunj",
+      "transactionType": "transfer",
+      "startingBalance": 200.5,
+      "endingBalance": 100.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-03T05:23:11.738Z",
+      "id": 8
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "employeeId": 1,
+      "amount": 50000,
+      "description": "this is deposited by ridham for testing",
+      "transactionType": "deposit",
+      "startingBalance": 100.5,
+      "endingBalance": 50100.5,
+      "createdAt": "2023-08-03T09:23:23.414Z",
+      "id": 9
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 100,
+      "description": "this transaction is 7th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 12800.2,
+      "endingBalance": 12900.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T09:24:28.667Z",
+      "id": 10
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 100,
+      "description": "this transaction is 7th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 50100.5,
+      "endingBalance": 50000.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-03T09:24:28.667Z",
+      "id": 11
+    },
+    {
+      "accountId": 3,
+      "customerId": 6,
+      "amount": 500,
+      "description": "this is 8th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 0,
+      "endingBalance": 500,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T09:25:19.787Z",
+      "id": 12
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 500,
+      "description": "this is 8th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 50000.5,
+      "endingBalance": 49500.5,
+      "receipentAccountNumber": "24351215059118",
+      "createdAt": "2023-08-03T09:25:19.787Z",
+      "id": 13
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 2000,
+      "description": "this is 9th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 12900.2,
+      "endingBalance": 14900.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T09:26:04.066Z",
+      "id": 14
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 2000,
+      "description": "this is 9th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 49500.5,
+      "endingBalance": 47500.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-03T09:26:04.066Z",
+      "id": 15
+    },
+    {
+      "accountId": 3,
+      "customerId": 6,
+      "amount": 3000,
+      "description": "this is the 10th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 500,
+      "endingBalance": 3500,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T09:26:32.879Z",
+      "id": 16
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 3000,
+      "description": "this is the 10th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 47500.5,
+      "endingBalance": 44500.5,
+      "receipentAccountNumber": "24351215059118",
+      "createdAt": "2023-08-03T09:26:32.879Z",
+      "id": 17
+    },
+    {
+      "accountId": 2,
+      "customerId": 5,
+      "amount": 2100,
+      "description": "this is 11th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 14900.2,
+      "endingBalance": 17000.2,
+      "receipentAccountNumber": "",
+      "createdAt": "2023-08-03T09:27:06.914Z",
+      "id": 18
+    },
+    {
+      "accountId": 1,
+      "customerId": 3,
+      "amount": 2100,
+      "description": "this is 11th transaction.",
+      "transactionType": "transfer",
+      "startingBalance": 44500.5,
+      "endingBalance": 42400.5,
+      "receipentAccountNumber": "47590447541530",
+      "createdAt": "2023-08-03T09:27:06.914Z",
+      "id": 19
     }
   ]
 }

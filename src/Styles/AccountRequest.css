@@ -1,0 +1,18 @@
+#register-button {
+  margin: 10px 0px;
+  width: 150px;
+  height: 50px;
+  border: 20px;
+  background: rgba(208, 219, 151, 0.7);
+  color: rgb(255 255 255);
+  font-family: sans-serif;
+  font-size: 23px;
+}
+
+#register-button:hover {
+  background: rgba(208, 219, 151, 0.9);
+}
+
+input[type="radio"]#radio-button {
+  accent-color: #34487a;
+}

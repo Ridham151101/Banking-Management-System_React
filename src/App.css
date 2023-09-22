@@ -7,3 +7,74 @@
 .errmsg {
   color: red;
 }
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-link:hover {
+  opacity: 0.7;
+  transition: ease-in-out;
+}
+
+#logout-button {
+  border-color: white;
+  background-color: transparent;
+}
+
+#logout-button:hover {
+  border-color: red;
+  background-color: red;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.welcome-heading {
+  color: #34487a;
+  margin: 50px 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.role-paragraph {
+  text-align: center;
+  font-size: x-large;
+}
+
+.add-employee-button {
+  margin: 20px 0 20px 0;
+}
+
+.last-10-transaction-heading {
+  text-align: center;
+}
+
+#gender-field {
+  display: flex;
+  padding: 0 5px;
+  gap: 0.3rem;
+}
+
+#buttons {
+  background: #34487a;
+  padding: 7px;
+  border: 20px;
+  color: rgb(255 255 255);
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

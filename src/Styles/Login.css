@@ -1,0 +1,43 @@
+#card {
+  background: transparent;
+  border: 3px solid #adb5bd;
+  border-radius: 10px;
+  color: #fff;
+}
+
+#card-header {
+  text-align: center;
+  border-bottom: 3px solid #adb5bd;
+  font-weight: 600;
+}
+
+#card-footer {
+  border-top: 3px solid #adb5bd;
+}
+
+#login {
+  margin: 10px 0px;
+  border: 20px;
+  background: rgba(208, 219, 151, 0.7);
+  color: rgb(255 255 255);
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+#login:hover {
+  background: rgba(208, 219, 151, 0.9);
+}
+
+#account-request {
+  margin: 10px 30px;
+  border: 20px;
+  background: rgba(0, 168, 235, 0);
+  color: rgb(255 255 255);
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+#account-request:hover {
+  color: #bce7fd;
+}

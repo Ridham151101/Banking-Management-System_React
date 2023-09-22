@@ -7,9 +7,10 @@ const FormInput = ({ type, label, value, onChange }) => {
         {label} <span className="errmsg">*</span>
       </label>
       {type === "radio" ? (
-        <div>
+        <div id="gender-field" className="mb-3">
           <input
             type="radio"
+            id="radio-button"
             checked={value === "male"}
             onChange={() => onChange("male")}
             value="male"
@@ -18,6 +19,7 @@ const FormInput = ({ type, label, value, onChange }) => {
           <label>Male</label>
           <input
             type="radio"
+            id="radio-button"
             checked={value === "female"}
             onChange={() => onChange("female")}
             value="female"
@@ -30,7 +32,7 @@ const FormInput = ({ type, label, value, onChange }) => {
           type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="form-control"
+          className="form-control mb-3"
         />
       )}
     </div>
